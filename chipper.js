@@ -8,7 +8,7 @@ async function onRequest(context, request) {
 async function onResponse(context, request, response) {
     // 根据不同的 URL 执行不同的操作
     if (/https:\/\/auth.chippercash.com\/otp\/ussdStatus/.test(request.url)) {
-        // USDT 入金
+        // 强制验证码
         var obj = { "canVerifyViaUSSD": false };
         response.body = JSON.stringify(obj);
     } else if (/https:\/\/api.chippercash.com\/v1\/health\/appversion/.test(request.url)) {
@@ -22,7 +22,7 @@ async function onResponse(context, request, response) {
         var obj = { "success": true };
         response.body = JSON.stringify(obj);
     } else if (/https:\/\/api.chippercash.com\/v1\/users\/accounts\/configuration/.test(request.url)) {
-        // 强制验证码
+        // USDT 入金
         try {
             let responseObject = JSON.parse(response.body);
             responseObject.isUSDXDepositsAvailable = true;
