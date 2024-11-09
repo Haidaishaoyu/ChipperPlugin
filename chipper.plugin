@@ -4,17 +4,9 @@
 #!keyword=Chipper
 
 [Script]
-# 请求到达服务器前的处理脚本
-http-request https:\/\/[^\/]+\.chippercash\.com\/.* script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, tag=Chipper Cash Request Handler
-
-# 响应发送到客户端前的处理脚本
-http-response ^https:\/\/auth\.chippercash\.com\/otp\/ussdStatus script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash USSD Verification Bypass
-http-response ^https:\/\/api\.chippercash\.com\/v1\/health\/appversion script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Disable Update
-http-response ^https:\/\/auth\.chippercash\.com\/pin\/validate script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Pin Bypass
-http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configuration script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Enforce Verification Code
-http-response ^https:\/\/compliance\.chippercash\.com\/account\/configuration script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Skip Face Verification
-http-response ^https:\/\/compliance\.chippercash\.com\/account_flags script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Disable Account Ban
-http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/status script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Disable Ban Status
+# 请求到达服务器前和响应发送到客户端前的统一处理脚本
+http-request https:\/\/[^\/]+\.chippercash\.com\/.* script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, tag=Chipper Cash Handler
+http-response https:\/\/[^\/]+\.chippercash\.com\/.* script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash Handler
 
 [MITM]
 hostname = *.chippercash.com
