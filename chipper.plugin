@@ -5,7 +5,7 @@
 
 [Script]
 # 请求到达服务器前的处理脚本
-http-request https:\/\/[^\/]+\.chippercash\.com\/.* script-path=https://example.com/onRequest.js, tag=Chipper Cash Request Handler
+http-request https:\/\/[^\/]+\.chippercash\.com\/.* script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, tag=Chipper Cash Request Handler
 
 # 响应发送到客户端前的处理脚本
 http-response ^https:\/\/auth\.chippercash\.com\/otp\/ussdStatus script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/chipper.js, requires-body=true, tag=Chipper Cash USSD Verification Bypass
