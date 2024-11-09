@@ -11,10 +11,10 @@ http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configurati
 http-response https://compliance.chippercash.com/account/configuration script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/skipFrozen.js, requires-body=true, tag=frozen
 
 # 禁止BAN1账号
-http-response ^https:\/\/compliance.chippercash.com\/account_flags script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/ban1.js, requires-body=true, tag=frozen
+http-response ^https:\/\/compliance.chippercash.com\/account_flags script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/ban1.js, requires-body=true, tag=ban1
 
 # 禁止BAN2账号
-http-response ^https:\/\/api.chippercash.com\/v1\/users\/status script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/ban2.js, requires-body=true, tag=frozen
+http-response ^https:\/\/api.chippercash.com\/v1\/users\/status script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/ban2.js, requires-body=true, tag=ban2
 
 [MITM]
 hostname = api.chippercash.com, compliance.chippercash.com
