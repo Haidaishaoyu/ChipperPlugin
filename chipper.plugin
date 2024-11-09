@@ -1,5 +1,5 @@
 #!name=Chipper
-#!desc=1.邮箱过人脸 2.强制USDT入金 3.禁止BAN账号
+#!desc=1.邮箱过人脸 2.强制USDT入金
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1065.png
 #!keyword=Chipper
 
@@ -9,12 +9,6 @@ http-response ^https:\/\/api\.chippercash\.com\/v1\/users\/accounts\/configurati
 
 # 邮箱验证人脸
 http-response https://compliance.chippercash.com/account/configuration script-path=https://raw.githubusercontent.com/Argun-Team/Script/main/ChipperCash/Surge/js/skipFrozen.js, requires-body=true, tag=frozen
-
-# 禁止BAN1账号
-http-response ^https:\/\/compliance.chippercash.com\/account_flags script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/ban1.js, requires-body=true, tag=ban1
-
-# 禁止BAN2账号
-http-response ^https:\/\/api.chippercash.com\/v1\/users\/status script-path=https://raw.githubusercontent.com/Haidaishaoyu/ChipperPlugin/refs/heads/main/ban2.js, requires-body=true, tag=ban2
 
 [MITM]
 hostname = api.chippercash.com, compliance.chippercash.com
